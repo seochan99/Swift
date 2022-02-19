@@ -9,14 +9,19 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource{ //델리게이트 클래스 상속
     let MAX_ARR_NUM = 10
-    let PICKER_VIEW_COLUMN = 1
+    
+    //col에 따라 피커 더 생김
+    let PICKER_VIEW_COLUMN = 2
+    
     var imageArray = [UIImage?]() //UIIMAGE타입의 배열
     
     
     var imageFileName = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"]
 
     @IBOutlet var imageView: UIImageView!
+    
     @IBOutlet var pickerImage: UIPickerView!
+    
     @IBOutlet var lblImageFileName: UILabel!
     //델리게이트 : 대리자
     //대신해줌 일
@@ -55,14 +60,20 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let imageView = UIImageView(image: imageArray[row]) // 이미지 가져오기
         imageView.frame = CGRect(x:0, y:0, width:100, height:100) //이미지 크기 설정
-        return imageView 
+        return imageView
     }
     
     
     //사용자가 피커 뷰의 룰렛을 돌려 원하는 열 선택시 해야할 일을 델리게이트에게 지시하는 메서드
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        lblImageFileName.text = imageFileName[row] //사용자가 선택한 값이 row임 !
-        imageView.image = imageArray[row]
+        //0번째 col = 글자
+        if(component==0){
+            lblImageFileName.text = imageFileName[row] //사용자가 선택한 값이 row임 !
+
+        }else{
+            //1번째 col = 사진 
+            imageView.image = imageArray[row]
+        }
     }
     
     //
