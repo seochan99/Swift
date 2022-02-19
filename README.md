@@ -20,3 +20,10 @@ Chan's Swift Record For IOS Developer
 3. 현재시간 가져오기
 4. 시간 포맷형식으로 뽑아오는 방법과 시간 다양한 메서드 활용법
 <img width="393" alt="스크린샷 2022-02-19 오후 6 11 18" src="https://user-images.githubusercontent.com/78739194/154794552-8bf2cdf6-6150-418c-b901-661150278826.png">
+
+## PickerView 
+1. 피커뷰 다루기 
+2. 피커뷰 -> 글, 사진 가져오기
+3. 피커뷰 델리게이트/메소드 사용하기
+4. 피커뷰 목록 사진으로 바꾸기 
+<img width="362" alt="스크린샷 2022-02-19 오후 8 03 08" src="https://user-images.githubusercontent.com/78739194/154798282-b33a1111-0ea6-4104-9461-205963d7c937.png">
