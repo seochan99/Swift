@@ -13,7 +13,10 @@ Chan's Swift Record For IOS Developer
 3. 스위치 액션함수 - 조건문이용
 4. 확대/축소 가능 
 <img width="394" alt="스크린샷 2022-02-19 오후 5 09 10" src="https://user-images.githubusercontent.com/78739194/154792768-554a3b45-5b31-4299-a7b7-9c9dd26089d9.png">
-<img width="380" alt="스크린샷 2022-02-19 오후 5 09 14" src="https://user-images.githubusercontent.com/78739194/154792771-2e23bb30-15f5-4176-a2c4-3681c594ff55.png">
-<img width="407" alt="스크린샷 2022-02-19 오후 5 09 19" src="https://user-images.githubusercontent.com/78739194/154792773-2d7ffd75-68bb-47a7-aaad-fc6d254c87b1.png">
 
-
+## DatePicker 
+1. datepicker만들기
+2. datepicker 시간 가져오기
+3. 현재시간 가져오기
+4. 시간 포맷형식으로 뽑아오는 방법과 시간 다양한 메서드 활용법
+<img width="393" alt="스크린샷 2022-02-19 오후 6 11 18" src="https://user-images.githubusercontent.com/78739194/154794552-8bf2cdf6-6150-418c-b901-661150278826.png">
