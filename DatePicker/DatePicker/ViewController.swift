@@ -12,10 +12,12 @@ class ViewController: UIViewController {
     let interval = 1.0 //타이머 간격 1.0초 간격
     var count = 0 // 타이머거 설정한 가격대로 실행되는지 체크한는 변수
     
+    var alarmTime : String? //알람시간
+    
 
     @IBOutlet var IblCurrentTime: UILabel!
-    
     @IBOutlet var IblPickerTime: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,6 +33,10 @@ class ViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd HH:mm EEE" //dateFromat 속성 설정
         IblPickerTime.text =
         "선택시간 : " + formatter.string(from: datePcikerView.date) //데이트피커에서 선택한 날자를 설정한 포맷대로 가져온다
+        
+        //시간 포맷형식 변경
+        formatter.dateFormat = "hh:mm aaa"
+        alarmTime = formatter.string(from: datePcikerView.date)
     }
     @objc func updateTime(){ // objc와의 호환을 위해 @붙임
 //        시간이 잘 오르는지 체크하는 코드
@@ -43,6 +49,19 @@ class ViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss EEE" //dateFromat 속성 설정
         IblCurrentTime.text =
         "선택시간 : " + formatter.string(from: date as Date) // 신기..
+        
+        formatter.dateFormat = "hh:mm aaa"
+        let currentTime = formatter.string(from: date as Date)
+        
+        //알람시간과 현재시간이 동일할때 
+        if(alarmTime == currentTime){
+            view.backgroundColor = UIColor.red
+        }
+        else{
+            view.backgroundColor = UIColor.white
+        }
+        
+        
         
     }
 }
