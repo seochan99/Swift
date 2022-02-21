@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             
         }
     }
-    
+            
     //끄기
     @IBAction func btnLampOff(_ sender: UIButton) {
         if isLampOn{
