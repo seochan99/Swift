@@ -27,3 +27,12 @@ Chan's Swift Record For IOS Developer
 3. 피커뷰 델리게이트/메소드 사용하기
 4. 피커뷰 목록 사진으로 바꾸기 
 <img width="362" alt="스크린샷 2022-02-19 오후 8 03 08" src="https://user-images.githubusercontent.com/78739194/154798282-b33a1111-0ea6-4104-9461-205963d7c937.png">
+
+## WebView 
+1. 웹페이지 주소 받기
+2. 주소 받아서 펴시하기 - 웹뷰
+3. 툴바 사용법 - 정렬법, 각종 버튼 만든는법, 버튼 코드 짜는법
+4. 파일 받는 방법 
+5. 파일 -> 원하는 값으로 변형 법 
+6. 사이트 연결하는 버튼 만들기 
+<img width="420" alt="스크린샷 2022-02-21 오후 4 59 34" src="https://user-images.githubusercontent.com/78739194/154912496-63ed99f1-bb98-4602-a105-2cbf99ad5775.png">
