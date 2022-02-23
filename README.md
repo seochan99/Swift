@@ -36,3 +36,13 @@ Chan's Swift Record For IOS Developer
 5. 파일 -> 원하는 값으로 변형 법 
 6. 사이트 연결하는 버튼 만들기 
 <img width="420" alt="스크린샷 2022-02-21 오후 4 59 34" src="https://user-images.githubusercontent.com/78739194/154912496-63ed99f1-bb98-4602-a105-2cbf99ad5775.png">
+
+## Map
+1. 지도만만드는 법 
+2. 세그먼트 컨트롤 사용하는 법 
+3. location 델리게이트가져오는 법 
+4. 위치데이터 활용하는 법  
+5. 핀 설치하는 법 
+6. <img width="384" alt="스크린샷 2022-02-23 오후 3 27 05" src="https://user-images.githubusercontent.com/78739194/155270931-2dfffd4e-d85a-4b5c-9212-54ad7b0ef368.png">
+
+
