@@ -108,7 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             self.lblLocationInfo1.text = ""
             self.lblLocationInfo2.text = ""
             
-            // 다시 원래 위치로 
+            // 다시 원래 위치로
             locationManager.startUpdatingLocation()
             
         }else if sender.selectedSegmentIndex == 1{
@@ -119,6 +119,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             setAnnotation(latitudeValue: 37.5676, longitudeValue: 127.0085, delta: 0.1, title: "DDP", subtitle: "서울특별시 중구 을지로7가 을지로 281")
             self.lblLocationInfo1.text = "보고 계신 위치"
             self.lblLocationInfo2.text = "DDP 동대문디자인플라자"
+        }else if sender.selectedSegmentIndex == 3{
+            setAnnotation(latitudeValue: 37.5591, longitudeValue: 126.9997, delta: 0.1, title: "동국대학교", subtitle: "서울특별시 중구 필동로1길 30")
+            self.lblLocationInfo1.text = "보고 계신 위치"
+            self.lblLocationInfo2.text = "마산집"
         }
     }
 }

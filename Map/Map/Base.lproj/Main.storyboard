@@ -23,6 +23,7 @@
                                     <segment title="현재위치"/>
                                     <segment title="동국대학교"/>
                                     <segment title="DDP"/>
+                                    <segment title="마산집"/>
                                 </segments>
                                 <connections>
                                     <action selector="sgChangeLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="wPo-9Y-9Q1"/>
