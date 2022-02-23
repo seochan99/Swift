@@ -45,4 +45,7 @@ Chan's Swift Record For IOS Developer
 5. 핀 설치하는 법 
 6. <img width="384" alt="스크린샷 2022-02-23 오후 3 27 05" src="https://user-images.githubusercontent.com/78739194/155270931-2dfffd4e-d85a-4b5c-9212-54ad7b0ef368.png">
 
+## Page Control 
+1. 페이지컨트롤 사용법
+<img width="401" alt="스크린샷 2022-02-23 오후 4 53 41" src="https://user-images.githubusercontent.com/78739194/155279774-abd9d00d-a38a-4971-8844-64179cb516be.png">
 
