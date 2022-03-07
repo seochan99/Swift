@@ -49,3 +49,13 @@ Chan's Swift Record For IOS Developer
 1. 페이지컨트롤 사용법
 <img width="401" alt="스크린샷 2022-02-23 오후 4 53 41" src="https://user-images.githubusercontent.com/78739194/155279774-abd9d00d-a38a-4971-8844-64179cb516be.png">
 
+
+## Table - To Do List 
+1. 테이블 뷰 컨트롤 사용법
+2. 뷰컨트롤 연결
+3. 테이블 뷰 컨트롤 파일 기능 사용하기
+4. 삭제, 목록 옮기기 기능 추가하기 
+5. 테이블에서 detail 로 데이터 가져가는 법 
+6. 
+<img width="1261" alt="스크린샷 2022-03-08 오전 2 03 55" src="https://user-images.githubusercontent.com/78739194/157082497-c2eb01a1-4a4c-4b34-909a-bd3309fb5a49.png">
+
