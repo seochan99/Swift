@@ -59,3 +59,10 @@ Chan's Swift Record For IOS Developer
 6. 
 <img width="1261" alt="스크린샷 2022-03-08 오전 2 03 55" src="https://user-images.githubusercontent.com/78739194/157082497-c2eb01a1-4a4c-4b34-909a-bd3309fb5a49.png">
 
+## auto layout
+1. AutoLayout
+2. safeArea
+3. stack View
+
+<img width="937" alt="스크린샷 2022-03-08 오전 2 35 06" src="https://user-images.githubusercontent.com/78739194/157087528-355ad028-bd19-442e-b718-021c08673987.png">
+
