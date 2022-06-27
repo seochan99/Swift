@@ -1,15 +1,9 @@
 // init
-let skeleton = Enemy()
+var skeleton1 = Enemy(health: 100, attackStrength: 10)
+var skeleton2 = skeleton1
 
-//print(skeleton.health)
-//skeleton.move()
-//skeleton.attack()
+skeleton1.takeDamge(amount: 10)
 
-let dragon = Dragon()
-dragon.wingSpan = 5 // dragon에게만
-dragon.attackStrength = 15
-dragon.talk(speech: "MY NAME IS CHAN!!!!")
 
-dragon.move()
-dragon.attack()
-ㄴ
+print(skeleton2.health)
+
