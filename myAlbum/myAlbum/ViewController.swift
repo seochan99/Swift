@@ -11,10 +11,16 @@ class ViewController: UIViewController {
     
     var currentValue = 0
 
+    // priceLabel Outlet 연결
+    @IBOutlet weak var priceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // text 업데이트
+        priceLabel.text = "$ \(currentValue)"
+        
     }
+    
+    
     @IBAction func showAlert(_ sender: Any) {
         let message = "가격은 \(currentValue)입니다."
         // alert, 알림창 만들기
@@ -35,6 +41,8 @@ class ViewController: UIViewController {
         
         //UInt32이라서 Int로 변환
         currentValue = Int(randomPrice)
+        // update될때마다 텍스트도 업데이트 되어야함
+        priceLabel.text = "$ \(currentValue)"
     }
     
 

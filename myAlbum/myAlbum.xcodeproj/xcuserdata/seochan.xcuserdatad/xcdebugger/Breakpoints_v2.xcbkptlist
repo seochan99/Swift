@@ -14,10 +14,118 @@
             filePath = "myAlbum/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "showAlert(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A281848-1736-478E-A63F-746E2545D855"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myAlbum/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - f333471d605db775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.priceLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - 14e6b0247031e61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.priceLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - 7c65763d04a05930"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.priceLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - 32a920c5e217fea8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.priceLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - 1c910305364f6ac7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; myAlbum.ViewController"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "6A281848-1736-478E-A63F-746E2545D855 - 999d807b64c5e32d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myAlbum.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;myAlbum.ViewController&gt;"
+                  moduleName = "myAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seochan/Documents/GitHub/Swift/myAlbum/myAlbum/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
