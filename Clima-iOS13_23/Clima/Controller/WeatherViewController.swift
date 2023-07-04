@@ -15,6 +15,9 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
+    var weatherManager = WeatherManager()
+    
+    
     // 텍스트 필드
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -61,6 +64,12 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
     
     // 수정이 끝났을때 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        // city는 입력받은 텍스트로 하고 이를 매니저에 전달한다
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        
         searchTextField.text = ""
     }
 }
