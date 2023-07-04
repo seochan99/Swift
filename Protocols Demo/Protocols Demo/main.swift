@@ -12,10 +12,7 @@ class Bird{
             print("The Bird makes a new bird in a shell.")
         }
     }
-    
-
 }
-
 
 // Bird 상속받은 eagle클래스
 class Eagle: Bird, CanFly {

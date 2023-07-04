@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		981034D928902A63009F1153 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981034D828902A63009F1153 /* main.swift */; };
+		9826C7952A53C44E0016057B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826C7942A53C44E0016057B /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		981034D328902A63009F1153 /* CopyFiles */ = {
+		9826C78F2A53C44E0016057B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		981034D528902A63009F1153 /* protocols and delegate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "protocols and delegate"; sourceTree = BUILT_PRODUCTS_DIR; };
-		981034D828902A63009F1153 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9826C7912A53C44E0016057B /* Protocols and delegate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Protocols and delegate"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9826C7942A53C44E0016057B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		981034D228902A63009F1153 /* Frameworks */ = {
+		9826C78E2A53C44E0016057B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,103 +38,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		981034CC28902A63009F1153 = {
+		9826C7882A53C44E0016057B = {
 			isa = PBXGroup;
 			children = (
-				981034D728902A63009F1153 /* protocols and delegate */,
-				981034D628902A63009F1153 /* Products */,
+				9826C7932A53C44E0016057B /* Protocols and delegate */,
+				9826C7922A53C44E0016057B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		981034D628902A63009F1153 /* Products */ = {
+		9826C7922A53C44E0016057B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				981034D528902A63009F1153 /* protocols and delegate */,
+				9826C7912A53C44E0016057B /* Protocols and delegate */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		981034D728902A63009F1153 /* protocols and delegate */ = {
+		9826C7932A53C44E0016057B /* Protocols and delegate */ = {
 			isa = PBXGroup;
 			children = (
-				981034D828902A63009F1153 /* main.swift */,
+				9826C7942A53C44E0016057B /* main.swift */,
 			);
-			path = "protocols and delegate";
+			path = "Protocols and delegate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		981034D428902A63009F1153 /* protocols and delegate */ = {
+		9826C7902A53C44E0016057B /* Protocols and delegate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 981034DC28902A63009F1153 /* Build configuration list for PBXNativeTarget "protocols and delegate" */;
+			buildConfigurationList = 9826C7982A53C44E0016057B /* Build configuration list for PBXNativeTarget "Protocols and delegate" */;
 			buildPhases = (
-				981034D128902A63009F1153 /* Sources */,
-				981034D228902A63009F1153 /* Frameworks */,
-				981034D328902A63009F1153 /* CopyFiles */,
+				9826C78D2A53C44E0016057B /* Sources */,
+				9826C78E2A53C44E0016057B /* Frameworks */,
+				9826C78F2A53C44E0016057B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "protocols and delegate";
-			productName = "protocols and delegate";
-			productReference = 981034D528902A63009F1153 /* protocols and delegate */;
+			name = "Protocols and delegate";
+			productName = "Protocols and delegate";
+			productReference = 9826C7912A53C44E0016057B /* Protocols and delegate */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		981034CD28902A63009F1153 /* Project object */ = {
+		9826C7892A53C44E0016057B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					981034D428902A63009F1153 = {
-						CreatedOnToolsVersion = 13.2.1;
+					9826C7902A53C44E0016057B = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 981034D028902A63009F1153 /* Build configuration list for PBXProject "protocols and delegate" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = 9826C78C2A53C44E0016057B /* Build configuration list for PBXProject "Protocols and delegate" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 981034CC28902A63009F1153;
-			productRefGroup = 981034D628902A63009F1153 /* Products */;
+			mainGroup = 9826C7882A53C44E0016057B;
+			productRefGroup = 9826C7922A53C44E0016057B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				981034D428902A63009F1153 /* protocols and delegate */,
+				9826C7902A53C44E0016057B /* Protocols and delegate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		981034D128902A63009F1153 /* Sources */ = {
+		9826C78D2A53C44E0016057B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				981034D928902A63009F1153 /* main.swift in Sources */,
+				9826C7952A53C44E0016057B /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		981034DA28902A63009F1153 /* Debug */ = {
+		9826C7962A53C44E0016057B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -178,7 +177,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -188,14 +187,13 @@
 			};
 			name = Debug;
 		};
-		981034DB28902A63009F1153 /* Release */ = {
+		9826C7972A53C44E0016057B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -233,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -242,7 +240,7 @@
 			};
 			name = Release;
 		};
-		981034DD28902A63009F1153 /* Debug */ = {
+		9826C7992A53C44E0016057B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -253,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		981034DE28902A63009F1153 /* Release */ = {
+		9826C79A2A53C44E0016057B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -267,25 +265,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		981034D028902A63009F1153 /* Build configuration list for PBXProject "protocols and delegate" */ = {
+		9826C78C2A53C44E0016057B /* Build configuration list for PBXProject "Protocols and delegate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				981034DA28902A63009F1153 /* Debug */,
-				981034DB28902A63009F1153 /* Release */,
+				9826C7962A53C44E0016057B /* Debug */,
+				9826C7972A53C44E0016057B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		981034DC28902A63009F1153 /* Build configuration list for PBXNativeTarget "protocols and delegate" */ = {
+		9826C7982A53C44E0016057B /* Build configuration list for PBXNativeTarget "Protocols and delegate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				981034DD28902A63009F1153 /* Debug */,
-				981034DE28902A63009F1153 /* Release */,
+				9826C7992A53C44E0016057B /* Debug */,
+				9826C79A2A53C44E0016057B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 981034CD28902A63009F1153 /* Project object */;
+	rootObject = 9826C7892A53C44E0016057B /* Project object */;
 }

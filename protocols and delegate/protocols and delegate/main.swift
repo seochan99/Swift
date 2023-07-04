@@ -1,62 +1,74 @@
-protocol AdvancedLifeSupport {
+// CPR수행 증명서
+protocol AdvancedLifeSupports{
     func performCPR()
+    
 }
-
-
-class EmergencyCalHandler{
-    var delegate: AdvancedLifeSupport?
+//
+class EmergencyCallHandler{
+    var delegate:AdvancedLifeSupports?
     
-    func asseseSitulation(){
-        print("Can you tell me what happend?")
+    func assessSitulation(){
+        print("Can you tell me what Happend?")
     }
-    
     func medicalEmergency(){
         delegate?.performCPR()
     }
+    
 }
 
-struct Paramedic: AdvancedLifeSupport{
+
+// 프로토콜을 받았고, 그를 수행해야한다
+struct Pramedic : AdvancedLifeSupports{
+    // 구급대원은 근무를 시작하면 가장먼저 호출기를 들어
+    // 담당자의 대리인 속성을 자신으로 한다
     
-    init(handler: EmergencyCalHandler) {
+    // handler는 호출기를 고르는 것과 같다
+    init(handler:EmergencyCallHandler){
+        // 위임자로 설정
+        handler.delegate = self
+    }
+    func performCPR() {
+        print("this paramedic does chest compression")
+    }
+    
+}
+
+class Doctor:AdvancedLifeSupports{
+    
+    init(handler : EmergencyCallHandler){
         handler.delegate = self
     }
     
     func performCPR() {
-        print("The paramedic does chest compressions, 30 per second.")
+        print("The doctor does..")
     }
     
-    
-}
-
-
-class Docotr:AdvancedLifeSupport {
-    
-    init(handler: EmergencyCalHandler){
-        handler.delegate = self
-    }
-    
-    func performCPR() {
-        print("The doctor does chest compressions, 30 per second.")
-    }
-    
-    func useSetthescope(){
-        print("Listening for heart sounds")
+    func useStethescope(){
+        print("LINSTEN HEART SOUND")
     }
 }
 
-class Surgeon: Docotr{
+class Surgeon:Doctor{
     override func performCPR() {
         super.performCPR()
-        print("Sings staying alive by the beegees")
+        print("Sings staying alive by the BeeGees")
     }
     
-    func useElectricDrill(){
-        print("Whirr...")
+    func useDrill(){
+        print("Drllllll")
     }
 }
 
-let emilio = EmergencyCalHandler()
+let emilio = EmergencyCallHandler()
+// emilio의 전화를 받음
+//let pete = Pramedic(handler: emilio)
+
+
+// 의사가 확인할때
 let angela = Surgeon(handler: emilio)
 
-emilio.asseseSitulation()
+
+// 호출자야 뭔 일 있어?
+emilio.assessSitulation()
 emilio.medicalEmergency()
+
