@@ -290,6 +290,7 @@
 				DEVELOPMENT_TEAM = Y2M459JK4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myAlbum/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chan's Album";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +319,7 @@
 				DEVELOPMENT_TEAM = Y2M459JK4X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myAlbum/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chan's Album";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
