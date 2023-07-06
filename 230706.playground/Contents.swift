@@ -83,18 +83,63 @@
 
 //------ Switch 심화
 
-let coordinate = (x:10, y:10)
+//let coordinate = (x:10, y:10)
+//
+//switch coordinate{
+//case(0,0):
+//    print("-> 원점")
+//case(let x,0):
+//    print("\(x) : x축입니다!")
+//case(0,let y):
+//    print("\(y) : y축입니다!")
+//case (let x,let y) where x==y:
+//    print("\(x), \(y) 같음 ㅋ")
+//case (let x,let y):
+//    print("\(x), \(y)")
+//
+//}
 
-switch coordinate{
-case(0,0):
-    print("-> 원점")
-case(let x,0):
-    print("\(x) : x축입니다!")
-case(0,let y):
-    print("\(y) : y축입니다!")
-case (let x,let y) where x==y:
-    print("\(x), \(y) 같음 ㅋ")
-case (let x,let y):
-    print("\(x), \(y)")
 
+// ------ 함수
+//func printName(){
+//    print("000> chan")
+//}
+
+//func printName(name: String){
+//    print("000> \(name) ")
+//}
+//
+//printName(name : "chan")
+//
+//
+//func printName2(이름 name: String)
+//{
+//    print("000\(name)")
+//}
+//
+//printName2(이름 : "chan")
+
+func printTotalPrice(price:Int, count : Int){
+    print("Total Price : \(price * count)")
 }
+
+printTotalPrice(price: 1500, count: 5)
+
+
+// default Value 주기
+func printTotalPriceDefaultValue(price:Int=1500, count : Int){
+    print("Total Price : \(price * count)")
+}
+
+printTotalPriceDefaultValue(count: 5)
+
+
+// return 키워드
+func totalPrice(price:Int, count:Int) -> Int{
+    let totalPrice = price * count
+    return totalPrice
+}
+
+let calPrice = totalPrice(price: 1500, count: 5)
+
+print(calPrice)
