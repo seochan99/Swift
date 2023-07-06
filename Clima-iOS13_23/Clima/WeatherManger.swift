@@ -21,30 +21,36 @@ struct WeatherManager {
             
             // 로딩화면 뜨게 한다
             // 3. Give the Session a task
-            let task = session.dataTask(with: url, completionHandler: handle(data:response:error:))
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil{
+                    print(error!)
+                    return
+                }
+                if let safeData = data {
+                    self.parseJSON(weatherData: safeData)
+                    // 데이터 문자열을 받음
+//                    let dataString = String(data: safeData, encoding: .utf8)
+//                    print(dataString)
+                }
+                
+            }
             // 4. Start. the task
             task.resume()
             
         }
-        // 아무것도 return 하지 않는다!
-        func handle(data:Data?, response:URLResponse?, error:Error?)->Void{
-            if error != nil{
-                print(error!)
-                return
-            }
-            if let safeData = data {
-                // 데이터 문자열을 받음
-                let dataString = String(data: safeData, encoding: .utf8)
-                print(dataString)
-            }
-            
-            
-        }
 
-        
-        
-        
+    }
+    // JSON 파싱하기
+    func parseJSON(weatherData : Data){
+        let decoder = JSONDecoder()
+        do{
+            let decodeData = try decoder.decode(WeatherData.self, from: weatherData)
+            print(decodeData.weather[0].description)
+        } catch{
+            print(error)
+        }
         
     }
+
     
 }
