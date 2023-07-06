@@ -171,21 +171,86 @@
 //
 //incrementAndPrint(&value)
 
-func add(_ a : Int, _ b: Int) -> Int {
-    return a + b
+//func add(_ a : Int, _ b: Int) -> Int {
+//    return a + b
+//}
+//
+//func sub(_ a : Int, _ b: Int) -> Int {
+//    return a - b
+//}
+//
+//var function = add
+//function(4,2)
+//
+//
+//func printResult(_ function:(Int,Int)->Int, _ a: Int, _ b: Int){
+//    let reuslt = function(a,b)
+//    print(reuslt)
+//}
+//
+//printResult(add, 10, 5)
+
+
+// --- optional
+
+//// 옵셔널 형태
+var carName: String? = "tank"
+//
+//// 아주 간단한 과제
+////
+//var actorName : String? = nil
+//let num = Int("10") // 10
+//let num2 = Int("10zz") // nil
+
+// optional 고급
+
+// Forced unWrapping
+// Option binding (if let)
+// Option binding (guard)
+// Nil Coalescing
+//
+//carName = nil
+//print(carName!)
+//
+
+// 부드럽게 까서 값이 없으면 else 처리 가능
+//if let unwrappedCarName = carName{
+//    print(unwrappedCarName)
+//}else{
+//    print("No car Name")
+//}
+
+// guard 방법
+// 복잡성 낮출 수 있음
+//func printParsedInt(from: String){
+//    // 앞에서 초기 조건을 다 쳐내버림
+//    guard let parsedInt = Int(from) else{
+//        print("cant converting to Int ")
+//        return
+//    }
+//    print(parsedInt)
+//}
+//
+//printParsedInt(from: "100")
+//printParsedInt(from: "chan")
+//
+//carName = nil
+//let myCarName: String = carName ?? "chans"
+
+// --- 도전 과제
+// 1. 최애 음식이름 담는 변수 작성
+
+let food : String? = "chicken"
+let myFavoritFood : String? = food ?? "beef"
+print(food!)
+print(myFavoritFood!)
+
+func getName(name:String?){
+    guard let realName = name else{
+        print("String을 입력해주세요")
+        return
+    }
+    print("name은 \(realName)입니다!")
 }
+getName(name: "chan")
 
-func sub(_ a : Int, _ b: Int) -> Int {
-    return a - b
-}
-
-var function = add
-function(4,2)
-
-
-func printResult(_ function:(Int,Int)->Int, _ a: Int, _ b: Int){
-    let reuslt = function(a,b)
-    print(reuslt)
-}
-
-printResult(add, 10, 5)
