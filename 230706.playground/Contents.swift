@@ -119,27 +119,73 @@
 //
 //printName2(이름 : "chan")
 
-func printTotalPrice(price:Int, count : Int){
-    print("Total Price : \(price * count)")
+//func printTotalPrice(price:Int, count : Int){
+//    print("Total Price : \(price * count)")
+//}
+//
+//printTotalPrice(price: 1500, count: 5)
+//
+//
+//// default Value 주기
+//func printTotalPriceDefaultValue(price:Int=1500, count : Int){
+//    print("Total Price : \(price * count)")
+//}
+//
+//printTotalPriceDefaultValue(count: 5)
+//
+//
+//// return 키워드
+//func totalPrice(price:Int, count:Int) -> Int{
+//    let totalPrice = price * count
+//    return totalPrice
+//}
+//
+//let calPrice = totalPrice(price: 1500, count: 5)
+//
+//print(calPrice)
+
+// 1. 성, 이름을 받아서 fullname출력 함수
+
+
+// 2. 1번 만든 함수로 파라미터 이름 제거하고 fullname 출력하기
+
+// 3. full name return
+
+//func getName(name:String, name2:String) -> String{
+//    return name+name2
+//}
+//
+//let myName = getName(name: "Seo", name2: "chan")
+//print(myName)
+
+
+// In-out parameter
+
+
+//// 들어온 value는 상수이다.
+//var value = 3
+//func incrementAndPrint(_ value: inout Int){
+//    value+=1
+//    print(value)
+//}
+//
+//incrementAndPrint(&value)
+
+func add(_ a : Int, _ b: Int) -> Int {
+    return a + b
 }
 
-printTotalPrice(price: 1500, count: 5)
-
-
-// default Value 주기
-func printTotalPriceDefaultValue(price:Int=1500, count : Int){
-    print("Total Price : \(price * count)")
+func sub(_ a : Int, _ b: Int) -> Int {
+    return a - b
 }
 
-printTotalPriceDefaultValue(count: 5)
+var function = add
+function(4,2)
 
 
-// return 키워드
-func totalPrice(price:Int, count:Int) -> Int{
-    let totalPrice = price * count
-    return totalPrice
+func printResult(_ function:(Int,Int)->Int, _ a: Int, _ b: Int){
+    let reuslt = function(a,b)
+    print(reuslt)
 }
 
-let calPrice = totalPrice(price: 1500, count: 5)
-
-print(calPrice)
+printResult(add, 10, 5)
