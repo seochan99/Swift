@@ -45,7 +45,7 @@ for key in scoreDic.keys{
 for value in scoreDic.values{
     print(value)
 }
-// 도전과제 
+// 도전과제
 var myDic: [String : String] = ["name":"chan","city":"Seoul","job":"programmer"]
 
 myDic["city"] = "busan"
@@ -59,3 +59,16 @@ func printMyDic(dic:[String:String]){
 }
 
 printMyDic(dic: myDic)
+
+var someArray : Array<Int> = [1,2,3,4]
+// set 선언
+// 순서가없음
+var someSet : Set<Int> = [1,2,3,4,4]
+
+someSet.isEmpty
+someSet.count
+someSet.contains(4)
+someSet.insert(5)
+someSet.remove(4)
+
+someArray
