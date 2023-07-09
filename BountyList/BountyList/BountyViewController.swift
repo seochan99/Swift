@@ -12,7 +12,9 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     
     // 데이터, 8개 아이템
     let nameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
+    
     let bountyList = [33000000, 50, 44000000, 300000000, 16000000, 80000000, 77000000, 120000000]
+    
     
     // 세그웨이 수행 준비하는 메서드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -23,7 +25,7 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
             let vc = segue.destination as? DetailViewController
             // index를 알려줌
             if let index = sender as? Int{
-                // 전달해줌 
+                // 전달해줌
                 vc?.name = nameList[index]
                 vc?.bountry = bountyList[index]
             }
