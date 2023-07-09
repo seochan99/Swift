@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
     
+    @IBOutlet weak var bountyLabelCenterX: NSLayoutConstraint!
+    @IBOutlet weak var nameLabelCenterX: NSLayoutConstraint!
     // 이름, 현상금 정보
 //    var name:String?
 //    var bountry: Int?
@@ -37,6 +39,46 @@ class DetailViewController: UIViewController {
 
         // ui 업데이트 해주기
         updateUI()
+        prepareAnimation()
+        
+    }
+    // 보여졌다~
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 보여졌을때 애니메이션을 해라~
+        showAnimation()
+    }
+    
+    private func prepareAnimation(){
+        // 밖에 내보내기
+        nameLabelCenterX.constant = view.bounds.width
+        bountyLabelCenterX.constant = view.bounds.width
+        
+    }
+    // 들어오기
+    private func showAnimation(){
+        nameLabelCenterX.constant = 0
+        bountyLabelCenterX.constant = 0
+        
+//        UIView.animate(withDuration: 0.3){
+//            self.view.layoutIfNeeded()
+//        }
+        
+//        UIView.animate(withDuration: 0.3,
+//                       delay: 0.1,
+//                       options: .curveEaseIn,
+//                       animations: {
+//            self.view.layoutIfNeeded()
+//        }, completion: nil)
+        
+        // 스프링 효과
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 2,options: .allowUserInteraction, animations: {
+            self.view.layoutIfNeeded()
+        },completion: nil)
+        
+        // 카드 뒤집기
+        UIView.transition(with: imgView, duration: 0.3, options:.transitionFlipFromLeft, animations: nil,completion: nil)
     }
     
     

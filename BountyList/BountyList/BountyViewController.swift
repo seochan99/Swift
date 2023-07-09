@@ -8,7 +8,7 @@
 import UIKit
 
 // 프로토콜 2개 추가
-class BountyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class BountyViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     // MVVM
     
@@ -20,8 +20,6 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     // - ListCell
     // > ListCell 필요한 정보를 ViewModel한테서 받아야겠다
     // > ListCell은 ViewModel로 부터 받은 정보로 뷰 업데이트 하기
-    
-    
     
     // ViewModel
     // - BountyViewModel
@@ -43,8 +41,6 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
                 let bountyInfo = viewModel.bountyInfo(at: index)
                 vc?.viewModel.update(model: bountyInfo)
             }
-            
-            
         }
     }
     
@@ -52,33 +48,47 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    //UITableViewDataSource 대답(갯수, 표현방식)
-    // 몇개니?
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // UICollectionViewDataSource
+    // 몇개를 보여줄까요?
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numOfBountyInfoList
     }
     
-    // 어떻게 표현?
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 재활용해서 보여준더ㅓ
-        
-        // 캐스팅 진행, 가드문
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for:indexPath) as? ListCell else{
-            // 옵셔널이 안된 경우
-            return UITableViewCell()
+    // 셀은 어떻게 표현할까요?
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as?
+                GridCell else {
+                return UICollectionViewCell()
         }
-        // 뷰모델에서 가져옴
-        let bountyInfo = viewModel.bountyInfo(at: indexPath.row)
+        
+        let bountyInfo = viewModel.bountyInfo(at: indexPath.item)
+            cell.update(info: bountyInfo)
         cell.update(info: bountyInfo)
         return cell
     }
     
-    // 클릭됐을때 어떻게?
-    // UITableViewDelegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 세그웨이 수행
-        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+    // UICollectionViewDelegate
+    // 셀이 클릭되었을때 우짤까요?
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+    }
+    
+    
+    // UICollectionViewDelegateFlowLayout
+    // device마다 cell크기가 달라야함
+    // 셀 사이즈를 계산할거다!
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // 간격
+        let itemSpacing: CGFloat = 10
+        // 글박스
+        let textAreaHeight: CGFloat = 65
+        
+        // 너비에서 10을 뺌, 남은 녀석 2등분 사용
+        let width: CGFloat = (collectionView.bounds.width - itemSpacing)/2
+        
+        let height: CGFloat = width * 10/7 + textAreaHeight
+        return CGSize(width: width, height: height)
     }
 }
 
@@ -94,6 +104,7 @@ class ListCell: UITableViewCell{
         bountyLabel.text = "\(info.bounty)"
     }
 }
+
 
 
 
@@ -130,4 +141,17 @@ class BountyViewModel{
         return sortedList[index]
     }
     
+}
+
+// gridCell
+class GridCell: UICollectionViewCell{
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var bountyLabel: UILabel!
+    
+    func update(info: BountyInfo){
+        imgView.image = info.image
+        nameLabel.text = info.name
+        bountyLabel.text = "\(info.bounty)"
+    }
 }
