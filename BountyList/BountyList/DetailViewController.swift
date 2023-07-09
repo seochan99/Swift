@@ -2,13 +2,32 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    // MVVM
+    
+    // Model
+    // - BountyInfo
+    // > BountyInfo 만들자
+    
+    // View
+    // - imageView, nameLabel, bountyLabel
+    // > view들은 viewModel을 통해서 구성되기
+    
+    
+    // ViewModel
+    // - DetailViewModel
+    // > 뷰레이어에서 필요한 메서드 만들기 
+    // > Model가지고 있기, BountyInfo 들..
+    
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
     
     // 이름, 현상금 정보
-    var name:String?
-    var bountry: Int?
+//    var name:String?
+//    var bountry: Int?
+    
+    var bountyInfo:BountyInfo?
+    
     
     
     
@@ -22,13 +41,17 @@ class DetailViewController: UIViewController {
     
     // 유아이 업데이트
     func updateUI(){
-        if let name = self.name, let bountry = self.bountry{
-            // 이미지 가져오기
-            let img = UIImage(named: "\(name).jpg")
-            imgView.image = img
-            nameLabel.text = name
-            bountyLabel.text = "\(bountry)"
+        
+        if let bountyInfo = self.bountyInfo{
+            imgView.image = bountyInfo.image
+            nameLabel.text = bountyInfo.name
+            bountyLabel.text = "\(bountyInfo.bounty)"
         }
+//        if let name = self.name, let bountry = self.bountry{
+//            // 이미지 가져오기
+//            let img = UIImage(named: "\(name).jpg")
+//
+//        }
     }
     
 
