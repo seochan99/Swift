@@ -26,7 +26,8 @@ class DetailViewController: UIViewController {
 //    var name:String?
 //    var bountry: Int?
     
-    var bountyInfo:BountyInfo?
+//    var bountyInfo:BountyInfo?
+    let viewModel = DetailViewModel()
     
     
     
@@ -41,17 +42,12 @@ class DetailViewController: UIViewController {
     
     // 유아이 업데이트
     func updateUI(){
-        
-        if let bountyInfo = self.bountyInfo{
+  
+        if let bountyInfo = viewModel.bountyInfo{
             imgView.image = bountyInfo.image
             nameLabel.text = bountyInfo.name
             bountyLabel.text = "\(bountyInfo.bounty)"
         }
-//        if let name = self.name, let bountry = self.bountry{
-//            // 이미지 가져오기
-//            let img = UIImage(named: "\(name).jpg")
-//
-//        }
     }
     
 
@@ -59,6 +55,12 @@ class DetailViewController: UIViewController {
         // 버튼 눌린 후 사라진다
         dismiss(animated: true, completion: nil)
     }
-    
+}
 
+class DetailViewModel{
+    var bountyInfo: BountyInfo?
+    
+    func update(model: BountyInfo?){
+        bountyInfo = model
+    }
 }

@@ -28,19 +28,7 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     // > BountyViewModel을 만들고, 뷰레이어에서 필요한 메서드 만들기
     // > Model가지고 있기, BountyInfo 들..
     
-    
-    // 데이터, 8개 아이템
-    
-    let bountyInfoList: [BountyInfo] = [
-        BountyInfo(name: "brook", bounty: 33000000),
-        BountyInfo(name: "chopper", bounty: 50),
-        BountyInfo(name: "franky", bounty: 44000000),
-        BountyInfo(name: "luffy", bounty: 300000000),
-        BountyInfo(name: "nami", bounty: 16000000),
-        BountyInfo(name: "robin", bounty: 80000000),
-        BountyInfo(name: "sanji", bounty: 77000000),
-        BountyInfo(name: "zoro", bounty: 120000000)
-    ]
+    let viewModel = BountyViewModel()
     
     // 세그웨이 수행 준비하는 메서드
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,10 +40,8 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
             // index를 알려줌
             if let index = sender as? Int{
                 // 전달해줌
-                let bountyInfo = bountyInfoList[index]
-//                vc?.name = bountyInfo.name
-//                vc?.bountry = bountyInfo.bounty
-                vc?.bountyInfo = bountyInfo
+                let bountyInfo = viewModel.bountyInfo(at: index)
+                vc?.viewModel.update(model: bountyInfo)
             }
             
             
@@ -65,15 +51,12 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     //UITableViewDataSource 대답(갯수, 표현방식)
     // 몇개니?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return bountyList.count
-        return bountyInfoList.count
+        return viewModel.numOfBountyInfoList
     }
     
     // 어떻게 표현?
@@ -85,18 +68,9 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
             // 옵셔널이 안된 경우
             return UITableViewCell()
         }
-        
-//        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-//        cell.imgView.image = img
-//        cell.nameLabel.text = nameList[indexPath.row]
-//        cell.bountyLabel.text = "\(bountyList[indexPath.row])"
-        
-        let bountyInfo = bountyInfoList[indexPath.row]
-        
-        let img = UIImage(named: "\(bountyInfo.name).jpg")
-        cell.imgView.image = img
-        cell.nameLabel.text = bountyInfo.name
-        cell.bountyLabel.text = "\(bountyInfo.bounty)"
+        // 뷰모델에서 가져옴
+        let bountyInfo = viewModel.bountyInfo(at: indexPath.row)
+        cell.update(info: bountyInfo)
         return cell
     }
     
@@ -113,21 +87,47 @@ class ListCell: UITableViewCell{
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
+    
+    func update(info: BountyInfo){
+        imgView.image = info.image
+        nameLabel.text = info.name
+        bountyLabel.text = "\(info.bounty)"
+    }
 }
 
 
 
 //  1. bountyInfo 만들기
-struct BountyInfo{
-    let name:String
-    let bounty:Int
+
+
+// 2. viewModel 만들기
+class BountyViewModel{
+    let bountyInfoList: [BountyInfo] = [
+        BountyInfo(name: "brook", bounty: 33000000),
+        BountyInfo(name: "chopper", bounty: 50),
+        BountyInfo(name: "franky", bounty: 44000000),
+        BountyInfo(name: "luffy", bounty: 300000000),
+        BountyInfo(name: "nami", bounty: 16000000),
+        BountyInfo(name: "robin", bounty: 80000000),
+        BountyInfo(name: "sanji", bounty: 77000000),
+        BountyInfo(name: "zoro", bounty: 120000000)
+    ]
     
-    var image: UIImage?{
-        return UIImage(named: "\(name).jpg")
+    // 정렬
+    var sortedList:[BountyInfo]{
+        let sortedList = bountyInfoList.sorted{prev,next in
+            return prev.bounty > next.bounty
+        }
+        return sortedList
     }
     
-    init(name:String, bounty:Int){
-        self.name = name
-        self.bounty = bounty
+    // 총 갯수 반환
+    var numOfBountyInfoList: Int{
+        return bountyInfoList.count
     }
+    
+    func bountyInfo(at index : Int) -> BountyInfo{
+        return sortedList[index]
+    }
+    
 }
