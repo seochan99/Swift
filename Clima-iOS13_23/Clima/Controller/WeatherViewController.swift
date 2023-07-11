@@ -8,15 +8,21 @@
 
 import UIKit
 
-//UITextFieldDelegate : 텍스트폼 연결
-class WeatherViewController: UIViewController,UITextFieldDelegate {
+//현재 위치 구현
+import CoreLocation
 
+//MARK: - UIViewController
+//UITextFieldDelegate : 텍스트폼 연결
+class WeatherViewController: UIViewController{
+    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
     var weatherManager = WeatherManager()
     
+    // 로케이션 매니저 불러오기
+    let locationManager = CLLocationManager()
     
     // 텍스트 필드
     @IBOutlet weak var searchTextField: UITextField!
@@ -24,11 +30,29 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        locationManager.delegate = self
+        // 권한 묻기
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        
+        
+        weatherManager.delegate = self
+        
         // textField가 ViewController에 보고하는 것
         searchTextField.delegate = self
         
     }
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+}
 
+
+//MARK: - UITextFieldDelegate
+extension WeatherViewController: UITextFieldDelegate{
     // 액션 검색버튼
     @IBAction func searchPressed(_ sender: UIButton) {
         
@@ -71,6 +95,40 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
         }
         
         searchTextField.text = ""
+    }
+    
+}
+//MARK: - WeatherManagerDelegate
+extension WeatherViewController: WeatherManagerDelegate{
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel){
+        // 비동기처리
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = weather.cityName
+        }
+        
+    }
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+//MARK: - CLLocationManagerDelegate
+extension WeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // 실제로케이션 뽑아내기
+        if let location = locations.last{
+            locationManager.stopUpdatingLocation() // 업데이트 멈추고다시 불러오기
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            weatherManager.fetchWeather(latitude:lat,longitude:lon)
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        
     }
 }
 
