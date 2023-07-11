@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: - UIViewController
 class TodoListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -45,6 +46,7 @@ class TodoListViewController: UIViewController {
     // TODO: BG 탭했을때, 키보드 내려오게 하기
 }
 
+//MARK: - TodoListViewController
 extension TodoListViewController {
     @objc private func adjustInputView(noti: Notification) {
         guard let userInfo = noti.userInfo else { return }
@@ -53,15 +55,17 @@ extension TodoListViewController {
     }
 }
 
+
+//MARK: - extension : UICollectionViewDataSource
 extension TodoListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // TODO: 섹션 몇개
-        return 0
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: 섹션별 아이템 몇개
-        return 0
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,13 +100,17 @@ extension TodoListViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - extension : UICollectionViewDelegateFlowLayout
 extension TodoListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // TODO: 사이즈 계산하기
-        return CGSize.zero
+        let width:CGFloat = collectionView.bounds.width
+        let height:CGFloat = 50
+        return CGSize(width: width, height: height)
     }
 }
 
+//MARK: - class : UICollectionViewCell
 class TodoListCell: UICollectionViewCell {
     
     @IBOutlet weak var checkButton: UIButton!
@@ -135,9 +143,11 @@ class TodoListCell: UICollectionViewCell {
     }
     
     private func showStrikeThrough(_ show: Bool) {
+        // 보여줘야할때 너비를 길이만큼
         if show {
             strikeThroughWidth.constant = descriptionLabel.bounds.width
         } else {
+            // 아닐때는 너비 0
             strikeThroughWidth.constant = 0
         }
     }
@@ -159,6 +169,7 @@ class TodoListCell: UICollectionViewCell {
     }
 }
 
+//MARK: - class : UICollectionReusableView
 class TodoListHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var sectionTitleLabel: UILabel!
